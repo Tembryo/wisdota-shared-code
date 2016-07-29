@@ -1,8 +1,13 @@
 var sensitive = require("./sensitive_config.js");
 
-if(process.env.VERSION === "DEV")
+if(process.env.VERSION === "LOCAL")
 {
     exports.database_host   = "POSTGRES_IP";
+    exports.version         = "LOCAL";
+}
+else if(process.env.VERSION === "DEV")
+{
+    exports.database_host   = "46.101.112.71";
     exports.version         = "DEV";
 }
 else    
